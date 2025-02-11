@@ -24,31 +24,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Add any head elements here */}
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header className="header p-4 flex justify-between items-center">
-          <div className="logo">RLappy</div>
-          <nav>
-            <a href="/">Home</a>
-            <a href="/catalog">Catalog</a>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact Us</a>
-          </nav>
-        </header>
-        <main className="main-content">{children}</main>
-        <footer className="footer p-4 flex justify-between items-center">
-          <div>© Blockchain Band</div>
-          <nav>
-            <a href="/">Home</a>
-            <a href="/catalog">Catalog</a>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact Us</a>
-          </nav>
-        </footer>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="min-h-screen flex flex-col">
+          <header className="header p-4 flex justify-between items-center">
+            <div className="logo">RLappy</div>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/catalog">Catalog</a>
+              <a href="/about">About Us</a>
+              <a href="/contact">Contact Us</a>
+            </nav>
+          </header>
+          <main className="main-content flex-grow">
+            {children}
+          </main>
+          <footer className="footer p-4 flex justify-between items-center">
+            <div>© Blockchain Band</div>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/catalog">Catalog</a>
+              <a href="/about">About Us</a>
+              <a href="/contact">Contact Us</a>
+            </nav>
+          </footer>
+        </div>
       </body>
     </html>
   );
