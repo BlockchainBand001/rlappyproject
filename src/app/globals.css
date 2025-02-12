@@ -147,6 +147,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, #00b894, #00cec9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Modern card effects */
 .hover-card {
   transition: all 0.3s ease;
@@ -155,4 +168,12 @@ body {
 .hover-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover-effect {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.01);
 }
