@@ -4,7 +4,6 @@ import { Container, Typography, Button, Card, CardContent, CardMedia, Box, Grid,
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StarIcon from '@mui/icons-material/Star';
 import TimerIcon from '@mui/icons-material/Timer';
-import Image from 'next/image';
 import CachedImage from '@/components/ui/CachedImage';
 
 // Define laptop images with proper URLs
