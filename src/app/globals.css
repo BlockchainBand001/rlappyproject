@@ -5,12 +5,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #00b894;
+  --primary-color-dark: #008060;
+  --secondary-color: #2d3436;
+  --accent-color: #dfe6e9;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary-color: #00b894;
+    --primary-color-dark: #008060;
+    --secondary-color: #2d3436;
+    --accent-color: #636e72;
   }
 }
 
@@ -18,4 +26,102 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-dark) 100%);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.features-section {
+  padding: 2rem 0;
+}
+
+.features-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.laptops-section {
+  padding: 2rem 0;
+}
+
+.laptops-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.laptop-card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.laptop-card img {
+  width: 100%;
+  height: auto;
+}
+
+.laptop-card h3 {
+  margin: 1rem 0;
+}
+
+.laptop-card p {
+  margin-bottom: 1rem;
+}
+
+.testimonials-section {
+  padding: 2rem 0;
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial-card {
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+/* Add smooth transitions */
+.MuiButton-root {
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Custom card hover effects */
+.MuiCard-root {
+  transition: transform 0.3s ease-in-out;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-5px);
 }
