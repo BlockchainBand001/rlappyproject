@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import ThemeRegistry from '@/components/ThemeRegistry';
+import NavBar from '@/components/NavBar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,23 +29,7 @@ export default function RootLayout({
       <body className={geistMono.className}>
         <ThemeRegistry>
           <div className="flex flex-col min-h-screen">
-            <AppBar position="sticky" color="default" elevation={1}>
-              <Toolbar className="container mx-auto">
-                <div className="flex items-center gap-2">
-                  <LaptopIcon color="primary" />
-                  <span className="text-xl font-bold">RLappy</span>
-                </div>
-                <nav className="ml-auto flex gap-4">
-                  <Button color="inherit" href="/">Home</Button>
-                  <Button color="inherit" href="/catalog">Catalog</Button>
-                  <Button color="inherit" href="/about">About</Button>
-                  <Button color="inherit" href="/contact">Contact</Button>
-                  <Button variant="contained" color="primary" href="/login">
-                    Login 👤
-                  </Button>
-                </nav>
-              </Toolbar>
-            </AppBar>
+            <NavBar />
             <main className="flex-grow">
               {children}
             </main>
