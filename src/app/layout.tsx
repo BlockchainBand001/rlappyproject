@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import LaptopIcon from '@mui/icons-material/Laptop';
-import { createTheme } from '@mui/material/styles';
+import ThemeRegistry from '@/components/ThemeRegistry';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,17 +11,6 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
-});
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#00b894',
-    },
-    secondary: {
-      main: '#2d3436',
-    },
-  },
 });
 
 export const metadata: Metadata = {
@@ -42,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={geistSans.className}>
       <body className={geistMono.className}>
-        <ThemeProvider theme={theme}>
+        <ThemeRegistry>
           <div className="flex flex-col min-h-screen">
             <AppBar position="sticky" color="default" elevation={1}>
               <Toolbar className="container mx-auto">
@@ -78,7 +62,7 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
-        </ThemeProvider>
+        </ThemeRegistry>
       </body>
     </html>
   );

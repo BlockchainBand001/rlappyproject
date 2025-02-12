@@ -1,3 +1,5 @@
+'use client';
+
 import { Container, Typography, Button, Card, CardContent, CardMedia, Box, Grid, Paper } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StarIcon from '@mui/icons-material/Star';
