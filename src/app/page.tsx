@@ -5,8 +5,37 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import StarIcon from '@mui/icons-material/Star';
 import TimerIcon from '@mui/icons-material/Timer';
 import Image from 'next/image';
+import CachedImage from '@/components/ui/CachedImage';
+
+// Define laptop images with proper URLs
+const LAPTOP_IMAGES = {
+  dell: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed',
+  macbook: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',
+  hp: 'https://images.unsplash.com/photo-1544731612-de7f96afe55f',
+} as const;
 
 export default function Home() {
+  const laptops = [
+    { 
+      name: "Dell XPS", 
+      price: "N5,000/hr", 
+      img: LAPTOP_IMAGES.dell,
+      specs: "16GB RAM • 512GB SSD" 
+    },
+    { 
+      name: "MacBook Pro", 
+      price: "N6,000/hr", 
+      img: LAPTOP_IMAGES.macbook,
+      specs: "M1 Chip • 8GB RAM" 
+    },
+    { 
+      name: "HP Spectre", 
+      price: "N4,500/hr", 
+      img: LAPTOP_IMAGES.hp,
+      specs: "i7 • 16GB RAM" 
+    },
+  ];
+
   return (
     <div>
       <section className="hero-section bg-gradient-to-r from-primary-color to-primary-color-dark text-white">
@@ -79,19 +108,18 @@ export default function Home() {
             Featured Laptops 🔥
           </Typography>
           <Grid container spacing={4}>
-            {[
-              { name: "Dell XPS", price: "N5,000/hr", img: "/dell.jpg", specs: "16GB RAM • 512GB SSD" },
-              { name: "MacBook Pro", price: "N6,000/hr", img: "/apple.jpg", specs: "M1 Chip • 8GB RAM" },
-              { name: "HP Spectre", price: "N4,500/hr", img: "/hp.jpg", specs: "i7 • 16GB RAM" },
-            ].map((laptop) => (
+            {laptops.map((laptop) => (
               <Grid item xs={12} sm={6} md={4} key={laptop.name}>
-                <Card elevation={2} className="h-full">
-                  <CardMedia
-                    component="img"
-                    height="200"
-                    image={laptop.img}
-                    alt={laptop.name}
-                  />
+                <Card elevation={2} className="h-full card-hover-effect">
+                  <div className="relative h-48">
+                    <CachedImage
+                      src={laptop.img}
+                      alt={laptop.name}
+                      width={400}
+                      height={300}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
                   <CardContent>
                     <Typography variant="h6" className="mb-2">
                       {laptop.name}
