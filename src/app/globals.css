@@ -8,6 +8,7 @@
   --primary-color: #00b894;
   --secondary-color: #2d3436;
   --accent-color: #dfe6e9;
+  --primary-color-dark: #008060; /* Darker shade for hover effects */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +18,7 @@
     --primary-color: #00b894;
     --secondary-color: #2d3436;
     --accent-color: #636e72;
+    --primary-color-dark: #008060; /* Darker shade for hover effects */
   }
 }
 
@@ -39,10 +41,15 @@ body {
   padding: 2rem;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .hero-section {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: var(--accent-color);
 }
 
 .hero-section h1 {
@@ -73,8 +80,6 @@ body {
 }
 
 .laptop-card {
-  background-color: var(--background);
-  border: 1px solid var(--accent-color);
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: center;
@@ -94,8 +99,6 @@ body {
 }
 
 .testimonials-section {
-  background-color: var(--secondary-color);
-  color: var(--accent-color);
   padding: 2rem 0;
 }
 
@@ -105,9 +108,6 @@ body {
 }
 
 .testimonial-card {
-  background-color: var(--primary-color);
-  color: var(--background);
-  padding: 1rem;
   border-radius: 0.5rem;
   margin: 0.5rem;
 }
